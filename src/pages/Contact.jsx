@@ -51,14 +51,11 @@ export default function Contact() {
     <div>
       <HeaderHero />
       <Header />
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 text-gray-800 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white">
+      <header className="relative overflow-hidden bg-gradient-to-r from-indigo-900 via-blue-900 to-indigo-800 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.3),transparent_60%)]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(37,99,235,0.2),transparent_50%)]"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-blue-500/10 to-purple-500/20"></div>
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
@@ -135,7 +132,7 @@ export default function Contact() {
         {/* Contact Form Section */}
         <section className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-white/20">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text">
+            <h2 className="text-4xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text">
               Send Us a Message
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -226,7 +223,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-blue-800 hover:to-blue-900 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-blue-700 hover:to-indigo-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                   >
                     {isSubmitting ? (
                       <>
@@ -246,7 +243,7 @@ export default function Contact() {
 
             {/* Additional Information */}
             <div className="space-y-8">
-              <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-8 border border-blue-200">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
                 <div className="flex items-center mb-4">
                   <Building className="h-6 w-6 text-blue-600 mr-3" />
                   <h3 className="text-xl font-bold text-gray-800">Ministry of Ayush</h3>

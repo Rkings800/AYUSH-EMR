@@ -1,9 +1,9 @@
-const axios = require("axios");
-const jwt = require("jsonwebtoken");
+import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 // This will Redirect the user to the abha NDHM Auth Gateway.
 
-exports.abhaLogin = (req, res) => {
+export const abhaLogin = (req, res) => {
   const redirectUri = encodedURIComponent(process.env.ABHA_REDIRECT_URI);
   const clientId = process.env.ABHA_CLIENT_ID;
 
@@ -14,7 +14,7 @@ exports.abhaLogin = (req, res) => {
 
 // ABHA CallBack (Exchange code for tokens)
 
-exports.abhaCallback = async (req, res) => {
+export const abhaCallback = async (req, res) => {
   const { code } = req.query;
 
   try {
@@ -66,7 +66,7 @@ exports.abhaCallback = async (req, res) => {
 
 // Protect Page
 
-exports.protect = async (req, res, next) => {
+export const protect = async (req, res, next) => {
   try {
     let token;
     if (
@@ -111,7 +111,7 @@ exports.protect = async (req, res, next) => {
 };
 
 
-exports.logout = (req, res) => {
+export const logout = (req, res) => {
     // In jwt based auth -> logout is frontend-driven (delete token)
     res.status(200).json({
         message: 'Logged in successfully'

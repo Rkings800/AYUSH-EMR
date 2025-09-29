@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, User, AlertCircle } from 'lucide-react';
 import DiagnosisForm from '../../components/Forms/DiagnosisForm';
-import TerminologySearch from './TerminologySearch'; // ✅ import your search component
- // Temporary test component
+import TerminologySearch from './TerminologySearch';
 
 const Diagnose = () => {
   const { patientId } = useParams();
@@ -11,7 +10,7 @@ const Diagnose = () => {
   const [patient, setPatient] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedDiagnosis, setSelectedDiagnosis] = useState(null); // ✅ capture selected terminology
+  const [selectedDiagnosis, setSelectedDiagnosis] = useState(null);
 
   useEffect(() => {
     const fetchPatient = async () => {
@@ -19,12 +18,10 @@ const Diagnose = () => {
         setLoading(false);
         return;
       }
-
       try {
         setLoading(true);
         setError(null);
-
-        // Mock patient data (replace with actual API call)
+        // Mock patient data
         const mockPatient = {
           id: patientId,
           name: 'Rajesh Kumar',
@@ -32,28 +29,22 @@ const Diagnose = () => {
           gender: 'Male',
           abhaId: 'ABHA-1234567890',
           phone: '+91-98765-43210',
-          address: '123 Main Street, Mumbai, Maharashtra 400001',
+          address: '123 Main Street, Mumbai',
           medicalHistory: 'Type 2 Diabetes, Hypertension',
           allergies: 'Penicillin',
           emergencyContact: '+91-98765-43211'
         };
-
         setPatient(mockPatient);
       } catch (err) {
-        console.error('Patient fetch error:', err);
         setError('Failed to load patient information');
       } finally {
         setLoading(false);
       }
     };
-
     fetchPatient();
   }, [patientId]);
 
   const handleSuccess = (responseData) => {
-    console.log('handleSuccess called with:', responseData);
-    console.log('Patient data:', patient);
-    // Pass the diagnosis data and patient data to the summary page
     navigate('/app/doctor/diagnosis-summary', {
       state: {
         diagnosisData: responseData?.originalFormData || responseData,
@@ -62,115 +53,43 @@ const Diagnose = () => {
     });
   };
 
-  const handleCancel = () => {
-    navigate('/app/doctor/patients');
-  };
+  const handleCancel = () => navigate('/app/doctor/patients');
 
-  if (loading) {
-    return (
-      <div className="space-y-6">
-        <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded w-1/4 mb-6"></div>
-          <div className="h-96 bg-gray-200 rounded-lg"></div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="text-center py-12">
-        <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
-        <h3 className="text-lg font-medium text-gray-900 mb-2">Error Loading Patient</h3>
-        <p className="text-gray-600 mb-4">{error}</p>
-        <button
-          onClick={() => navigate('/app/doctor/patients')}
-          className="btn-primary"
-        >
-          Back to Patients
-        </button>
-      </div>
-    );
-  }
+  if (loading) return <div className="p-6 animate-pulse">Loading patient info...</div>;
+  if (error) return (
+    <div className="text-center py-12">
+      <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
+      <h3 className="text-lg font-medium">{error}</h3>
+      <button onClick={handleCancel} className="btn-primary mt-4">Back to Patients</button>
+    </div>
+  );
 
   return (
     <div className="space-y-6">
-      {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <button
-            onClick={() => navigate('/app/doctor/patients')}
-            className="flex items-center text-mint-600 hover:text-mint-700"
-          >
-            <ArrowLeft className="h-4 w-4 mr-1" />
-            Back to Patients
-          </button>
-        </div>
-      </div>
+      <button onClick={handleCancel} className="flex items-center text-mint-600 hover:text-mint-700">
+        <ArrowLeft className="h-4 w-4 mr-1" /> Back to Patients
+      </button>
 
-      {/* Patient Information */}
       {patient && (
-        <div className="card">
-          <div className="flex items-center space-x-4 mb-6">
-            <div className="h-12 w-12 bg-mint-100 rounded-lg flex items-center justify-center">
+        <div className="card p-4">
+          <div className="flex items-center space-x-4 mb-4">
+            <div className="h-12 w-12 bg-mint-100 rounded flex items-center justify-center">
               <User className="h-6 w-6 text-mint-600" />
             </div>
             <div>
-              <h1 className="text-2xl font-heading font-bold text-gray-900">
-                Diagnose Patient
-              </h1>
-              <p className="text-gray-600">
-                Creating diagnosis for {patient.name}
-              </p>
+              <h1 className="text-2xl font-bold">Diagnose Patient</h1>
+              <p className="text-gray-600">Creating diagnosis for {patient.name}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div>
-              <h3 className="font-medium text-gray-900 mb-2">Patient Details</h3>
-              <div className="space-y-1 text-sm text-gray-600">
-                <p><span className="font-medium">Name:</span> {patient.name}</p>
-                <p><span className="font-medium">Age:</span> {patient.age} years</p>
-                <p><span className="font-medium">Gender:</span> {patient.gender}</p>
-                <p><span className="font-medium">ABHA ID:</span> {patient.abhaId}</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-medium text-gray-900 mb-2">Contact Information</h3>
-              <div className="space-y-1 text-sm text-gray-600">
-                <p><span className="font-medium">Phone:</span> {patient.phone}</p>
-                <p><span className="font-medium">Emergency:</span> {patient.emergencyContact}</p>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="font-medium text-gray-900 mb-2">Medical Information</h3>
-              <div className="space-y-1 text-sm text-gray-600">
-                <p><span className="font-medium">History:</span> {patient.medicalHistory}</p>
-                <p><span className="font-medium">Allergies:</span> {patient.allergies}</p>
-              </div>
-            </div>
-          </div>
+          <DiagnosisForm
+            patientId={patientId}
+            selectedDiagnosis={selectedDiagnosis}
+            onSuccess={handleSuccess}
+            onCancel={handleCancel}
+          />
         </div>
       )}
-
-      {/* ✅ Terminology Search instead of search input in DiagnosisForm */}
-      <div className="card p-4">
-        <h3 className="font-medium text-gray-900 mb-4">Select Diagnosis</h3>
-        <TerminologySearch onSelect={setSelectedDiagnosis} />
-      </div>
-
-      {/* Temporary API Test */}
-
-
-      {/* Diagnosis Form */}
-      <DiagnosisForm
-        patientId={patientId}
-        selectedDiagnosis={selectedDiagnosis} // ✅ pass selected code
-        onSuccess={handleSuccess}
-        onCancel={handleCancel}
-      />
     </div>
   );
 };

@@ -4,15 +4,12 @@ import HeaderHero from './HeaderHero';
 
 export default function Features() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 text-gray-800 font-sans">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-gray-800 font-sans">
         <HeaderHero />
         <Header />
       {/* Animated Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white">
+      <header className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.3),transparent_60%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(37,99,235,0.2),transparent_50%)]"></div>
         <div className="relative max-w-6xl mx-auto px-8 py-20 text-center">
           <div className="animate-fade-in-up">
             <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
@@ -40,15 +37,9 @@ export default function Features() {
 
       <main className="max-w-7xl mx-auto px-8 py-20 space-y-24">
         {/* Core Features with Images */}
-        <section className="py-32 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-300/40 to-blue-500/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-400/30 to-blue-600/20 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-blue-500/25 to-blue-700/15 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-          </div>
-          <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-white/20">
+        <section className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-white/20">
           <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text">
+            <h2 className="text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text">
               Powerful Features for Precision Healthcare
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -126,7 +117,6 @@ export default function Features() {
               </div>
             ))}
           </div>
-        </div>
         </section>
 
         {/* Impact Section with Statistics */}
@@ -194,7 +184,7 @@ export default function Features() {
               { title: "Enterprise Security", img: "/indian goverment.svg", desc: "Government-grade encryption" }
             ].map((security, idx) => (
               <div key={idx} className="group relative">
-                <div className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   <div className="relative h-40 rounded-xl overflow-hidden mb-4">
                     <img 
                       src={security.img} 

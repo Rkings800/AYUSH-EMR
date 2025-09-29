@@ -1,5 +1,5 @@
 // Simple bundle controller to handle FHIR bundle uploads
-exports.uploadBundle = async (req, res) => {
+export const uploadBundle = async (req, res) => {
   try {
     console.log('Bundle upload request received');
     console.log('Request body:', JSON.stringify(req.body, null, 2));
@@ -39,7 +39,7 @@ exports.uploadBundle = async (req, res) => {
 };
 
 // Get bundle by ID (placeholder)
-exports.getBundle = async (req, res) => {
+export const getBundle = async (req, res) => {
   try {
     const { id } = req.params;
     

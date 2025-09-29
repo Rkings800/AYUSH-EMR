@@ -18,8 +18,8 @@ import Dashboard from './pages/User/Dashboard';
 import Records from './pages/User/Records';
 import Prescription from './pages/User/Prescription';
 import Profile from './pages/User/Profile';
-import NewAppointment from './pages/User/NewAppointment';
-import Appointments from './pages/User/Appointments';
+import NewAppointment from './pages/Appointments/NewAppointment';
+import ViewAppointments from './pages/Appointments/ViewAppointments';
 
 // Doctor Pages (placeholder - to be implemented)
 import DoctorDashboard from './pages/Doctor/Dashboard';
@@ -97,9 +97,9 @@ const AppRoutes = () => {
         <Route path="records/:id" element={<Records />} />
         <Route path="prescriptions" element={<Navigate to="/app/dashboard" replace />} />
         <Route path="prescriptions/:id" element={<Prescription />} />
-        <Route path="appointments" element={<Appointments />} />
-        <Route path="appointments/new" element={<NewAppointment />} />
         <Route path="profile" element={<Profile />} />
+        <Route path="appointments/new" element={<NewAppointment />} />
+        <Route path="appointments" element={<ViewAppointments />} />
         
         {/* Doctor Routes */}
         <Route path="doctor/dashboard" element={

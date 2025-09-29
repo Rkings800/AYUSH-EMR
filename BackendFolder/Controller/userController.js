@@ -1,5 +1,5 @@
 // Basic user controller with mock data
-exports.getAllUsers = async (req, res) => {
+export const getAllUsers = async (req, res) => {
   try {
     // Mock users data
     const users = [
@@ -31,7 +31,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-exports.getUser = async (req, res) => {
+export const getUser = async (req, res) => {
   try {
     const { id } = req.params;
     

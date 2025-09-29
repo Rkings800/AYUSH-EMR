@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base API configuration
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api/v1/namaste';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api/v1/namaste';
 
 // Create axios instance
 const api = axios.create({
@@ -79,6 +79,15 @@ export const userAPI = {
   
   // Get medical records
   getRecords: () => api.get('/user/records'),
+  
+  // Get user appointments
+  getAppointments: () => api.get('/user/appointments'),
+  
+  // Book new appointment
+  bookAppointment: (appointmentData) => api.post('/appointments/book', appointmentData),
+  
+  // Cancel appointment
+  cancelAppointment: (id) => api.delete(`/appointments/${id}`),
 };
 
 // Doctor API endpoints

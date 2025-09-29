@@ -1,20 +1,17 @@
 import React from "react";
 import Header from "./Header";
 import HeaderHero from "./HeaderHero";
-
 export default function About() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 text-gray-800 font-sans">
+    <div>
+
       <HeaderHero />
       <Header />
-      
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 text-gray-800 font-sans">
       {/* Animated Hero Section */}
-      <header className="relative overflow-hidden bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white">
+      <header className="relative overflow-hidden bg-gradient-to-r from-indigo-900 via-blue-900 to-indigo-800 text-white">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.3),transparent_60%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(37,99,235,0.2),transparent_50%)]"></div>
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-blue-500/10 to-purple-500/20"></div>
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-blue-400/20 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-purple-400/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
@@ -46,59 +43,52 @@ export default function About() {
 
       <main className="max-w-7xl mx-auto px-8 py-20 space-y-24">
         {/* Mission Section */}
-        <section className="py-32 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-300/40 to-blue-500/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-400/30 to-blue-600/20 rounded-full blur-3xl"></div>
-            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-blue-500/25 to-blue-700/15 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <section className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl p-12 border border-white/20">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text">
+              Our Mission: Harmonizing Healthcare Systems
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Creating a unified language that bridges traditional Ayurvedic wisdom with modern medical standards
+            </p>
           </div>
-          <div className="relative max-w-7xl mx-auto px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6 text-transparent bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text">
-                Our Mission: Harmonizing Healthcare Systems
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Creating a unified language that bridges traditional Ayurvedic wisdom with modern medical standards
-              </p>
-            </div>
           
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="group">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-3 rounded-2xl shadow-lg">
-                      <span className="text-2xl text-white">🎯</span>
-                    </div>
-                    <h3 className="ml-4 text-2xl font-bold text-gray-800">The Challenge We Solve</h3>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="group">
+                <div className="flex items-center mb-4">
+                  <div className="bg-gradient-to-r from-blue-500 to-indigo-500 p-3 rounded-2xl shadow-lg">
+                    <span className="text-2xl text-white">🎯</span>
                   </div>
-                  <p className="text-gray-700 leading-relaxed">
-                    Traditional Indian medical systems serve millions, but their data often remains isolated, hindering research, policy-making, and patient care on a national and global scale.
-                  </p>
+                  <h3 className="ml-4 text-2xl font-bold text-gray-800">The Challenge We Solve</h3>
                 </div>
-                
-                <div className="group">
-                  <div className="flex items-center mb-4">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-2xl shadow-lg">
-                      <span className="text-2xl text-white">💡</span>
-                    </div>
-                    <h3 className="ml-4 text-2xl font-bold text-gray-800">Our Revolutionary Solution</h3>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">
-                    Our Dual-Coding Terminology Micro-Service seamlessly integrates NAMASTE codes and WHO ICD-11 TM2, empowering practitioners to document patient data in a globally understood language.
-                  </p>
-                </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Traditional Indian medical systems serve millions, but their data often remains isolated, hindering research, policy-making, and patient care on a national and global scale.
+                </p>
               </div>
               
-              <div className="relative">
-                <img 
-                  src="/PM ayush mission.png" 
-                  alt="Ayush Mission"
-                  className="rounded-2xl shadow-2xl w-full h-80 object-cover"
-                />
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-white p-4 rounded-2xl shadow-xl">
-                  <div className="text-xl font-bold">1M+</div>
-                  <div className="text-sm">Patients Served</div>
+              <div className="group">
+                <div className="flex items-center mb-4">
+                  <div className="bg-gradient-to-r from-green-500 to-emerald-500 p-3 rounded-2xl shadow-lg">
+                    <span className="text-2xl text-white">💡</span>
+                  </div>
+                  <h3 className="ml-4 text-2xl font-bold text-gray-800">Our Revolutionary Solution</h3>
                 </div>
+                <p className="text-gray-700 leading-relaxed">
+                  Our Dual-Coding Terminology Micro-Service seamlessly integrates NAMASTE codes and WHO ICD-11 TM2, empowering practitioners to document patient data in a globally understood language.
+                </p>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <img 
+                src="/PM ayush mission.png" 
+                alt="Ayush Mission"
+                className="rounded-2xl shadow-2xl w-full h-80 object-cover"
+              />
+              <div className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-white p-4 rounded-2xl shadow-xl">
+                <div className="text-xl font-bold">1M+</div>
+                <div className="text-sm">Patients Served</div>
               </div>
             </div>
           </div>
@@ -290,6 +280,29 @@ export default function About() {
           </div>
         </div>
       </footer>
+
+      {/* Custom CSS for animations */}
+      <div className="hidden">
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes fade-in-up {
+              from {
+                opacity: 0;
+                transform: translateY(30px);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0);
+              }
+            }
+            
+            .animate-fade-in-up {
+              animation: fade-in-up 1s ease-out;
+            }
+          `
+        }} />
+      </div>
+    </div>
     </div>
   );
 }

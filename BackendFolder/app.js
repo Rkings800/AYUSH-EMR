@@ -1,9 +1,9 @@
-const express = require('express');
-const cors = require('cors');
-const morgan = require('morgan');
-const app = express();
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import namRouter from './Routes/namRouter.js';
 
-const namRouter = require('./Routes/namRouter');
+const app = express();
 
 // CORS configuration
 app.use(cors({
@@ -32,4 +32,4 @@ app.use(morgan('dev'));
 
 app.use('/api/v1/namaste',namRouter);
 
-module.exports = app;
+export default app;

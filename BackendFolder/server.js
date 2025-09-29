@@ -1,17 +1,39 @@
-const mongoose = require('mongoose');
+import express from "express";
+import fs from "fs";
+import cors from "cors";
 
-const app = require('./app');
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-const dotenv = require('dotenv');
+const FILE_PATH = "./diagnoses.json";
 
-dotenv.config();
+// Save diagnosis
+app.post("/api/diagnosis", (req, res) => {
+  const newDiagnosis = {
+    id: Date.now(),
+    ...req.body,
+    savedAt: new Date().toISOString(),
+  };
 
-const DB = process.env.MONGO_URI;
-mongoose.connect(DB);
+  let diagnoses = [];
+  if (fs.existsSync(FILE_PATH)) {
+    diagnoses = JSON.parse(fs.readFileSync(FILE_PATH, "utf-8"));
+  }
+  diagnoses.push(newDiagnosis);
+  fs.writeFileSync(FILE_PATH, JSON.stringify(diagnoses, null, 2));
 
-
-const port = process.env.PORT || 5000;
-
-app.listen(port , () => {
-    console.log(`App running on port ${port}`);
+  res.status(201).json(newDiagnosis);
 });
+
+// Fetch all diagnoses
+app.get("/api/diagnosis", (req, res) => {
+  if (!fs.existsSync(FILE_PATH)) {
+    return res.json([]);
+  }
+  const data = JSON.parse(fs.readFileSync(FILE_PATH, "utf-8"));
+  res.json(data);
+});
+
+const PORT = 5001;
+app.listen(PORT, () => console.log(`✅ Backend running at http://localhost:${PORT}`));

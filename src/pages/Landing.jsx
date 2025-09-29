@@ -70,11 +70,10 @@ const Landing = () => {
           <img 
             src="/Banner 1 Modi ji.jpg" 
             alt="Ayush Healthcare" 
-            className="w-full h-full object-cover opacity-15"
+            className="w-full h-full object-cover opacity-20"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/95 via-blue-800/90 to-blue-700/95"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.2),transparent_70%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(37,99,235,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/90 via-blue-800/85 to-indigo-900/90"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(96,165,250,0.15),transparent_60%)]"></div>
         </div>
 
         {/* Floating Elements */}
@@ -87,12 +86,12 @@ const Landing = () => {
         {/* Hero Content */}
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="inline-flex items-center px-6 py-3 bg-blue-500/20 backdrop-blur-sm rounded-full text-white/95 text-sm font-semibold mb-6 animate-fade-in border border-blue-400/30">
-              <span className="w-2 h-2 bg-blue-300 rounded-full mr-3 animate-pulse"></span>
+            <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6 animate-fade-in">
+              <span className="w-2 h-2 bg-blue-400 rounded-full mr-2 animate-pulse"></span>
               Trusted by 1000+ Ayush practitioners
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent animate-fade-in-up">
               The Future of Ayush Healthcare is Here
             </h1>
             
@@ -103,13 +102,13 @@ const Landing = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-400">
               <button
                 onClick={() => navigate("/demo")}
-                className="px-10 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold rounded-full shadow-2xl hover:shadow-blue-600/40 hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm border border-blue-500/30"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-full shadow-2xl hover:shadow-blue-500/25 hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
               >
                 Request a Free Demo
               </button>
               <button
                 onClick={() => navigate("/features")}
-                className="px-10 py-4 bg-blue-500/20 backdrop-blur-sm text-white font-bold rounded-full border-2 border-blue-400/40 hover:bg-blue-500/30 hover:border-blue-400/60 transition-all duration-300 transform hover:scale-105"
+                className="px-8 py-4 bg-white/10 backdrop-blur-sm text-white font-semibold rounded-full border-2 border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:scale-105"
               >
                 Explore Features
               </button>
@@ -126,20 +125,19 @@ const Landing = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-32 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative overflow-hidden">
+      <section id="features" className="py-32 bg-blue-50 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-300/40 to-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-blue-200/40 to-blue-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/30 to-blue-600/20 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-blue-200 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-gradient-to-tr from-blue-100 to-transparent rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full text-white text-sm font-bold mb-6 shadow-lg">
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-100 to-blue-200 rounded-full text-blue-700 text-sm font-semibold mb-6">
               ✨ Revolutionary Features
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-6 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold text-center text-gray-900 mb-6 bg-gradient-to-r from-gray-900 to-blue-600 bg-clip-text text-transparent">
               Core Features of VedEMR
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -163,19 +161,19 @@ const Landing = () => {
                 
                 <div className="relative z-10">
                   <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl flex items-center justify-center text-2xl text-white font-bold shadow-xl group-hover:shadow-2xl transition-all duration-300 mr-4 border border-blue-500/30">
-                    {feature.icon}
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center text-2xl text-white font-bold shadow-lg group-hover:shadow-xl transition-shadow duration-300 mr-4">
+                      {feature.icon}
+                    </div>
+                    <h3 className="font-bold text-xl text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                      {feature.title}
+                    </h3>
                   </div>
-                  <h3 className="font-bold text-xl text-gray-900 group-hover:text-blue-700 transition-colors duration-300">
-                    {feature.title}
-                  </h3>
-                </div>
                   <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                     {feature.desc}
                   </p>
                 </div>
 
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
               </div>
             ))}
           </div>
@@ -183,12 +181,11 @@ const Landing = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-32 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-100 relative overflow-hidden">
+      <section id="about" className="py-32 bg-gradient-to-br from-blue-50 via-blue-100 to-blue-50 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-200/40 to-blue-400/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-300/30 to-blue-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-br from-blue-400/25 to-blue-600/15 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-blue-100/30 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-blue-100/30 to-transparent rounded-full blur-3xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -197,12 +194,10 @@ const Landing = () => {
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="py-32 bg-gradient-to-r from-blue-700 via-blue-800 to-blue-900 text-center text-white relative overflow-hidden">
+      <section id="cta" className="py-32 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-center text-white relative overflow-hidden">
         {/* Background & floating elements */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-700/90 via-blue-800/90 to-blue-900/90"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(59,130,246,0.3),transparent_60%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(37,99,235,0.2),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/80 via-blue-700/80 to-indigo-700/80"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
         </div>
         <div className="absolute inset-0 pointer-events-none">
